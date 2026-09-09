@@ -1,103 +1,28 @@
 using System;
-
-usingSystem.Linq;
-
-
-namespace ConsoleApp1
-
+class Program
 {
-
-internalstaticclassProgram
-
-{
-
-privatestaticvoid Main()
-
-{
-
-int[][] jagged = new[]
-
-{
-
-new[] { 1, 2, 3 },
-
-new[] { 4, 5 },
-
-new[] { 6 },
-
-newint[0]
-
-};
-
-int[] rowSums = SumRowSums(jagged);
-
-
-for (int i = 0; i <rowSums.Length; i++)
-
-{
-
-Console.WriteLine($"Row {i} sum = {rowSums[i]}");
-
+    static void Main()
+    {
+        int[][] arr =
+        {
+            new int[] {10,20,30,40},
+            new int[] { 5,15},
+            new int[] { 2,4,6 },
+            new int[] {100,200,300,400,500}
+        };
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int sum = 0;
+            for(int j = 0; j < arr[i].Length; j++)
+            {
+                sum += arr[i][j];
+            }
+            Console.WriteLine("sum of row" + (i+1) + "=" + sum);
+        }
+    }
 }
-
-int total = rowSums.Sum();
-
-Console.WriteLine($"Total sum = {total}");
-
-}
-
-
-privatestaticint[] SumRowSums(int[][] jagged)
-
-{
-
-if (jagged == null) thrownewArgumentNullException(nameof(jagged));
-
-int[] sums = newint[jagged.Length];
-
-for (int i = 0; i <jagged.Length; i++)
-
-{
-
-int sum = 0;
-
-int[] row = jagged[i];
-
-
-if (row != null)
-
-{
-
-for (int j = 0; j <row.Length; j++)
-
-{
-
-sum += row[j];
-
-}
-
-}
-
-
-sums[i] = sum;
-
-}
-
-
-return sums;
-
-}
-
-}
-
-}
-output:
-Row 0 sum = 6
-
-Row 1 sum = 9
-
-Row 2 sum = 6
-
-Row 3 sum = 0
-
-Total sum = 21
+Output:
+sum of row1=100
+sum of row2=20
+sum of row3=12
+sum of row4=1500
