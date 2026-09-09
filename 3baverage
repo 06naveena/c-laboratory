@@ -39,7 +39,7 @@ static void Main()
 
 {
 
-STUDENT s = new STUDENT(101, "Muthu", 80, 90, 70);
+STUDENT s = new STUDENT(101, "Naveena", 80, 90, 70);
 
 Console.WriteLine("Roll No = " + s.roll);
 
