@@ -1,0 +1,52 @@
+using System;
+
+delegate void TrafficDelegate();
+
+class TrafficSignal
+{
+    public static void Yellow()
+    {
+        Console.WriteLine("Yellow Light Signal To Get Ready");
+    }
+
+    public static void Green()
+    {
+        Console.WriteLine("Green Light Signal To Go");
+    }
+
+    public static void Red()
+    {
+        Console.WriteLine("Red Light Signal To Stop");
+    }
+
+    // Method to identify the signal
+    public static void IdentifySignal()
+    {
+        TrafficDelegate[] signals =
+        {
+            Yellow,
+            Green,
+            Red
+        };
+
+        // Invoke each delegate method
+        foreach (TrafficDelegate signal in signals)
+        {
+            signal();
+        }
+    }
+
+    // Method to show the signals
+    public static void Show()
+    {
+        IdentifySignal();
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        TrafficSignal.Show();
+    }
+}
